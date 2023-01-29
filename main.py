@@ -7,7 +7,7 @@ from classes.TextPost import TextPost
 from classes.Post import *
 
 import pygame
-
+from classes.Comment import *
 from constants import BLACK, WINDOW_WIDTH, WINDOW_HEIGHT
 from helpers import screen
 
@@ -49,6 +49,7 @@ def main():
                     current_post.add_like()
                 elif mouse_in_button(comment_button, mouse_pos):
                     user_comment = read_comment_from_user()
+                    user_comment = Comment.censor(user_comment)
                     current_post.add_comment(user_comment)
                 elif mouse_in_button(click_post_button, mouse_pos):
                     current_post_index = (current_post_index + 1) % len(posts_list)

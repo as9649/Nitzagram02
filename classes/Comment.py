@@ -13,3 +13,13 @@ class Comment:
         comment_font = pygame.font.SysFont("chalkduster.ttf", 15)
         display_to_comment = comment_font.render(self.text, True, BLACK)
         screen.blit(display_to_comment, (FIRST_COMMENT_X_POS, FIRST_COMMENT_Y_POS + comment_num * COMMENT_LINE_HEIGHT))
+
+    def censor(comment):
+        for word in BAD_WORDS:
+            x = comment.find(word)
+            if x != -1:
+                st=""
+                for i in range(0, len(word)):
+                    st += "*"
+                comment = comment.replace(word, st)
+        return comment

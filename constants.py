@@ -72,3 +72,5 @@ BLACK = (0, 0, 0)
 GREY = (50, 50, 50)
 WHITE = (255, 255, 255)
 LIGHT_GRAY = (134, 134, 134)
+
+BAD_WORDS = ["fuck", "stupid", "idiot", "shit", "damn"]
