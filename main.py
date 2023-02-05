@@ -5,6 +5,7 @@ from classes.Filter import *
 from classes.ImagePost import ImagePost
 from classes.TextPost import TextPost
 from classes.Post import *
+from files_bonus import *
 
 import pygame
 from classes.Comment import *
@@ -35,6 +36,12 @@ def main():
     posts_list = [post_omer, post_noa, post_ronaldo, text_post]
     current_post_index = 0
     current_post = posts_list[current_post_index]
+
+    files_bonus.save_post(post_omer, 0, "posts_file.txt", "comments_file.txt")
+    files_bonus.load_all_posts("posts_file.txt", "comments_file.txt")
+    # with open("test.txt", "w") as my_file:
+    #     lines = ["hi", "shalom", "hello"]
+    #     my_file.writelines(lines)
 
     running = True
     while running:
